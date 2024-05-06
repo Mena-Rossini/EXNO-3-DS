@@ -35,55 +35,55 @@ We use this categorical data encoding technique when the features are nominal(do
 • Yeojohnson method
 
 # CODING AND OUTPUT:
-    ```
+    
      import pandas as pd
      df=pd.read_csv("/content/Encoding Data.csv")
      df
-    ```
+    
   ![img1](https://github.com/nanditha121/EXNO-3-DS/assets/142209508/eca0e23d-6ea3-4685-ad3e-3a3c688afce4)
 
 
-    ```
+    
     from sklearn.preprocessing import LabelEncoder,OrdinalEncoder
     pm=['Hot','Warm','Cold']
     e1=OrdinalEncoder(categories=[pm])
     e1.fit_transform(df[["ord_2"]])
-    ```
+    
 
   ![img 2](https://github.com/nanditha121/EXNO-3-DS/assets/142209508/6f0fce59-7852-489d-a76f-db5988a45a3b)
 
 
-```
+
     
     df['bo2']=e1.fit_transform(df[["ord_2"]])
     df
-   ``` 
+    
 
   ![img 3](https://github.com/nanditha121/EXNO-3-DS/assets/142209508/84e9360b-9728-444d-bbe3-f7480e9633f6)
 
-    ```
+    
     df['bo2']=e1.fit_transform(df[["ord_2"]])
     df
-    ```
+    
   ![img 4](https://github.com/nanditha121/EXNO-3-DS/assets/142209508/addbdb92-ff8a-41f3-af9e-bd97ac6800a2)
 
-    ```
+    
     le=LabelEncoder()
     dfc=df.copy()
     dfc['ord_2']=le.fit_transform(dfc['ord_2'])
     dfc
-    ```
+    
 
   ![img 5](https://github.com/nanditha121/EXNO-3-DS/assets/142209508/1c7de496-371e-4a21-a189-7ed70ecc2900)
 
-    ```
+    
     from sklearn.preprocessing import OneHotEncoder
     ohe=OneHotEncoder(sparse=False)
     df2=df.copy()
     enc=pd.DataFrame(ohe.fit_transform(df2[['nom_0']]))
     df2=pd.concat([df2,enc],axis=1)
     df2
-    ```
+    
 
   ![img 6](https://github.com/nanditha121/EXNO-3-DS/assets/142209508/a8c5038b-2814-4b1d-8f85-c27b292c04d4)
 
@@ -99,7 +99,7 @@ We use this categorical data encoding technique when the features are nominal(do
 
   ![img 8](https://github.com/nanditha121/EXNO-3-DS/assets/142209508/eba5c171-3e23-483f-b4ed-6f4c47b5e89b)
 
-    ```
+    
     from category_encoders import BinaryEncoder
     df=pd.read_csv("/content/data.csv")
     be=BinaryEncoder()
@@ -107,28 +107,28 @@ We use this categorical data encoding technique when the features are nominal(do
     fb=pd.concat([df,nd],axis=1)
     dfb1=df.copy()
     dfb
-    ```
+    
 
   ![img 9](https://github.com/nanditha121/EXNO-3-DS/assets/142209508/9b983cb5-c712-49d8-bcd8-817ca7f56947)
 
-    ```
+    
     from category_encoders import TargetEncoder
     te=TargetEncoder()
     cc=df.copy()
     new=te.fit_transform(X=cc["City"],y=cc["Target"])
     cc=pd.concat([cc,new],axis=1)
     cc
-    ```
+  
 
   ![i 0](https://github.com/nanditha121/EXNO-3-DS/assets/142209508/0d2e7e51-9cb4-4530-a56d-39d1435d0249)
 
-    ```
+    
     import pandas as pd
     from scipy import stats
     import numpy as np
     df=pd.read_csv("/content/Data_to_Transform.csv")
     df
-    ```
+    
 
   ![i 1](https://github.com/nanditha121/EXNO-3-DS/assets/142209508/f71a4dd5-6389-4fb9-a209-81064b1d878f)
 
